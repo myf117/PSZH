@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 550px) {
+  .pszh-nav-right {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 600px) {}
+
+html,
+body {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+}
+
+.pub1 {
+  background-color: #aaa;
+  height: 750px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+}
+.ps-public{
+  display: flex;
+  display: -webkit-flex;
+}

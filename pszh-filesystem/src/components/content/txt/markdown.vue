@@ -1,16 +1,9 @@
 <template>
-  <div>
-    <mavon-editor
-      v-model="content"
-      :toolbars="toolbars"
-      @save="saveFile"
-      @imgAdd="handleEditorImgAdd"
-      @imgDel="handleEditorImgDel"
-      ref="md"
-      :ishljs="true"
-    /><!--@change="saveFile"-->
-    <!-- <div v-html="readmeContent"></div> -->
-  </div>
+    <div>
+        <mavon-editor v-model="content" :toolbars="toolbars" @save='saveFile'  @imgAdd="handleEditorImgAdd"
+     @imgDel="handleEditorImgDel" ref="md" :ishljs='true' /><!--@change="saveFile"-->
+        <div v-html="readmeContent" ></div>
+    </div>
 </template>
 <script>
 import marked from 'marked'
@@ -131,44 +124,17 @@ export default {
         },
         
         handleEditorImgAdd(pos, $file) {
-                // console.log($file)
                 let formdata = new FormData();
                 formdata.append('imgFile',$file)
                 let postobj = {
                     formdata:formdata
                 };
-                // this.imgArr[Number(pos-1)] = $file
-                let fType = $file.name.substring(
-                $file.name.lastIndexOf(".") + 1
-            );
-            if (
-                fType == "jpg" ||
-                fType == "png" ||
-                fType == "jpeg" ||
-                fType == "JPG"
-            ) {
-                console.log(pos,$file)
-                let size = $file.size / 1024 / 1024;
-                if (size > 2) {
-                    alert("文件不能超过2M");
-                    // this.$refs.md.__oFReader.result = ''
-                    this.handleEditorImgDel();
-                    // this.$refs.md.$imgDel(0);
-                    // console.log('add', pos);
-                    console.log(this.$refs.md);
-                    return false;
-                }
-                // console.log(this.content);
+                this.imgArr[Number(pos-1)] = $file
+                console.log(this.content);
                 // this.uploadImg(pos,postobj);
-            }else {
-                alert('文件格式不正确');
-            }
         },
         handleEditorImgDel(pos){
-            console.log('del',pos)
-            // console.log(name)
-            
-            // delete this.imgArr[pos-1]
+            delete this.imgArr[pos-1]
         },
         getTime(){
             let date = new Date();
@@ -220,4 +186,5 @@ export default {
 }
 </script>
 <style scoped>
+
 </style>

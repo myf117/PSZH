@@ -13,7 +13,7 @@ import axios from 'axios';
 // import cookie from "./public/js/cookie"
 // import Bus from './public/js/Bus'
 // import Base64 from "./public/js/base64.js";
-// Vue.prototype.cookie = cookie;/
+// Vue.prototype.cookie = cookie;
 // Vue.prototype.Base64 = Base64;
 // Vue.prototype.Bus = Bus;
 Vue.use(mavonEditor);
@@ -25,7 +25,7 @@ Vue.prototype.$http = axios;
 axios.defaults.baseURL = 'http://localhost:8003';
 
 Vue.config.productionTip = false
-console.log(router)
+// console.log(router)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

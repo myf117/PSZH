@@ -1,6 +1,6 @@
 <template>
       <el-container>
-        <el-aside width="250px">
+        <el-aside width="2.5rem" >
           <mleft></mleft>
         </el-aside>
         <el-container>
@@ -13,7 +13,7 @@
 
 <script>
 
-import mleft from './aside/aside'
+import mleft from '../aside/aside'
 export default {
   components:{
     mleft
@@ -26,9 +26,11 @@ export default {
 <style>
 .el-header, .el-footer {
     background-color: #B3C0D1;
-    color: #333;
+    font-weight: 800;
+    color: rgba(0,0,0,.7);
     text-align: center;
     line-height: 60px;
+    line-height: .6rem;
   }
   .el-header {
     padding: 0;
@@ -36,23 +38,30 @@ export default {
   }
   
   .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
+    background-color: #ffffff;
+    font-weight: 800;
+    color: rgba(0,0,0,.7);
     text-align: center;
     line-height: 200px;
-    height:100vh;
+    line-height: 2rem;
+    height:auto;
+    /* height: calc(100% - 60px); */
   }
   
   .el-main {
     background-color: #ffffff;
-    color: #333;
+    font-weight: 800;
+    color: rgba(0,0,0,.7);
     text-align: center;
     line-height: 160px;
+    line-height: 1.6rem;
   }
   
   #app > .el-container {
-    height:100vh;
+    height: calc(100% - 60px);
+    height: calc(100% - 3.75rem);
     margin-bottom: 40px;
+    margin-bottom: .4rem;
   }
   
   /* .el-container:nth-child(5) .el-aside,
@@ -66,8 +75,22 @@ export default {
 
   ul, li {
     box-sizing: border-box;
+    text-align: left;
   }
-  .left-menu ul {
-    height: 100vh;
+  li {
+    padding-left: 20px !important;
+    padding-left: .2rem !important;
   }
+  ul {
+    padding-left: 0 !important;
+  }
+  .left-menu > ul {
+    height: calc(100vh - 60px);
+    height: calc(100vh - .6rem);
+    /* height: 100%; */
+  }
+  /* .el-menu > .el-submenu > .el-submenu__title {
+    box-sizing: border-box;
+    padding: 0 10px !important;
+  } */
 </style>

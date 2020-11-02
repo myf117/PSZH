@@ -5,7 +5,6 @@
             :default-active="activeIndex2"
             class="el-menu-demo"
             mode="horizontal"
-            @select="handleSelect"
             background-color="#545c64"
             text-color="#fff"
             active-text-color="#ffd04b"
@@ -38,34 +37,20 @@ export default {
         mybutton
     },
     methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-        // this.activeIndex = key;
-        // let path = null;
-        // console.log(this.$router.push)
-        // switch(key){
-        //     case 1: path = '/main';this.$router.push('/main');break;
-        //     // case 1: path = '/main';this.$router.router.push(path);break;
-        //     // case 1: path = '/main';this.$router.router.push(path);break;
-        //     // case 1: path = '/main';this.$router.router.push(path);break;
-        //     // case 1: path = '/main';this.$router.router.push(path);break;
-        // }
-      },
       goRouter(index){
             this.activeIndex = index;
             let path = null;
             console.log(this.$router.push)
             switch(index){
-                case 1: path = '/main';this.$router.push('main');break;
-                // case 1: path = '/main';this.$router.router.push(path);break;
-                // case 1: path = '/main';this.$router.router.push(path);break;
-                // case 1: path = '/main';this.$router.router.push(path);break;
-                // case 1: path = '/main';this.$router.router.push(path);break;
+                case 1: path = '/home'; this.activeIndex2 = '1';this.$router.push(path);break;
+                case 2: path = '/main';this.activeIndex2 = '2';this.$router.push(path);break;
             }
-      }
+            let route = this.$route.path.substr(1);
+            sessionStorage.setItem('path',route);
+      },
+     
     },
     mounted() {
-        
     },
 }
 </script>
@@ -74,10 +59,15 @@ export default {
         background-color: #545c64;
         width: 100%;
         height: 60px;
+        /* height: .6rem; */
         color: #fff;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+        z-index: 100;
+        min-width: 1200px;
+        min-width: 12rem;
     }
     .header-menu-left,
     .header-menu-right {
@@ -89,12 +79,25 @@ export default {
     .header-menu-left {
         width: 10%;
         line-height: 60px;
+        line-height: .6rem;
+        min-width: 150px;
+        min-width: 1.5rem;
     }
     .header-menu-right {
         width: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+        min-width: 700px;
+        min-width: 7rem;
     }
-    
+    .header-menu > ul li,.header-menu > ul  {
+        border: none;
+    }
+    .el-menu-demo {
+        display: flex;
+        flex-wrap: nowrap;
+        min-width: 350px;
+        min-width: 3.5rem;
+    }
 </style>

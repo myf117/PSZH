@@ -5,7 +5,7 @@
         class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose"
-        unique-opened='true'
+        :unique-opened='true'
         background-color=" #ffffff"
         text-color="#000000"
         active-text-color="#ffd04b"
@@ -71,7 +71,7 @@
     methods: {
       handleOpen(key, keyPath) {
         console.log(key)
-        let regx = /[0-9]/;
+        let regx = /[0-9]/g;
         if(key.match(regx)){
           this.$router.push('/main/'+key);
           return;
@@ -106,8 +106,9 @@
         for(let i = 0; i < route.length; i++){
           route[i].onclick = (e) => {
             let key = e.target.index;
-            this.$router.push('/main/'+key);
-            return;
+            console.log(e.target.innerHTML)
+            // this.$router.push('/main/'+key);
+            // return;
           }
         }
       }
@@ -128,6 +129,7 @@
   .left-menu {
       width: 100%;
       height: 100%;
+      min-width: 200px;
   }
   .el-menu {
     border-right: none !important;

@@ -10,7 +10,7 @@ import navigator from './view/nav/navigator'
 export default {
   name: 'App',
   components:{
-    navigator
+    navigator,
   },
   mounted() {
   },

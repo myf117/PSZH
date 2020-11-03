@@ -9,20 +9,26 @@ import echarts from 'echarts'
 import mavonEditor from 'mavon-editor';     //markdown编辑器
 import 'mavon-editor/dist/css/index.css';
 import axios from 'axios';
-// import Bus from "./public/js/Bus";
-// import cookie from "./public/js/cookie"
-// import Bus from './public/js/Bus'
-// import Base64 from "./public/js/base64.js";
-// Vue.prototype.cookie = cookie;
-// Vue.prototype.Base64 = Base64;
-// Vue.prototype.Bus = Bus;
+import 'github-markdown-css/github-markdown.css'
+import showfile from './components/content/main/showFile.vue';
+import crumb from './components/content/main/breadcrub.vue';
+Vue.component('crumb',crumb);
+Vue.component('showfile',showfile)
+
+import showdown from 'showdown'
+    Vue.prototype.md2html = (md)=> {
+      let converter = new showdown.Converter()
+      let text = md.toString()
+      let html = converter.makeHtml(text)
+      return html
+    }
 Vue.use(mavonEditor);
 
 Vue.prototype.$editor = mavonEditor;
 Vue.prototype.$echarts = echarts
 Vue.use(ElementUI);
 Vue.prototype.$http = axios;
-axios.defaults.baseURL = 'http://localhost:8003';
+// axios.defaults.baseURL = 'http://localhost:8003';
 
 Vue.config.productionTip = false
 // console.log(router)

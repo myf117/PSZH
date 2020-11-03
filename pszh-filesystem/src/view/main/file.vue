@@ -45,6 +45,9 @@ export default {
     line-height: 200px;
     line-height: 2rem;
     height:auto;
+    /* position: fixed;
+    left: 0;
+    top: 60px; */
     /* height: calc(100% - 60px); */
   }
   
@@ -53,8 +56,10 @@ export default {
     font-weight: 800;
     color: rgba(0,0,0,.7);
     text-align: center;
-    line-height: 160px;
-    line-height: 1.6rem;
+    /* line-height: 160px; */
+    /* line-height: 1.6rem; */
+    /* position: relative;
+    left: 250px; */
   }
   
   #app > .el-container {
@@ -85,8 +90,8 @@ export default {
     padding-left: 0 !important;
   }
   .left-menu > ul {
-    height: calc(100vh - 60px);
-    height: calc(100vh - .6rem);
+    /* height: calc(100vh - 60px); */
+    /* height: calc(100vh - .6rem); */
     /* height: 100%; */
   }
   /* .el-menu > .el-submenu > .el-submenu__title {

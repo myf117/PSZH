@@ -1,5 +1,16 @@
 <template>
     <div>
-        menufour-2
+        <showfile :options='options'></showfile>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            options:{
+                menuName:'menufour-2'
+            }
+        }
+    },
+}
+</script>

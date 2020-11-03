@@ -3,7 +3,9 @@
   padding: 0;
   margin: 0;
 }
-
+a {
+  text-decoration: none;
+}
 /* @media screen and (max-width: 550px) {
   .pszh-nav-right {
     display: none;
